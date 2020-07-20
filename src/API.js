@@ -2,6 +2,7 @@ const BASEURL = "http://localhost:3000/"
 const LOGINURL = BASEURL + "login"
 const SIGNUPURL = BASEURL + "signup"
 const VALIDATEURL = BASEURL + "validate"
+const SHOPSEARCHURL = BASEURL + "shopsearch"
 
 const get = (url) => {
     const configObj = {
@@ -38,6 +39,8 @@ const authPost = (url, body) => {
     return fetch (url, configObj)
 }
 
+const searchShops = (body) => authPost (SHOPSEARCHURL, body).then(response => response.json())
+
 const validate = () => get(VALIDATEURL).then(response => response.json())
 
 const signup = (body) => 
@@ -50,4 +53,4 @@ const login = (body) =>
     .then(response => response.json())
 
 
-export default {signup, login, validate}
+export default {signup, login, validate, searchShops}

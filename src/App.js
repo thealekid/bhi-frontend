@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import Unauthorised from "./components/Unauthorised"
-import Authorised from "./components/Authorised"
+import Unauthorised from "./components/Unauthorised";
+import Authorised from "./components/Authorised";
 import API from './API';
+
 
 
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
     }
     return (
       <Fragment>
-      {this.state.user.id ? <Authorised logout={this.logout}/> : <Unauthorised login={this.login}/>}
+        {this.state.user.id ? <Authorised logout={this.logout}/> : <Unauthorised login={this.login}/>}
       </Fragment>
     )
 
