@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
+import SearchBarShop from './SearchBarShop'
+import Shop from './Shop'
 
 export default class SearchShop extends Component {
 
     render() {
+        const {handleChange, search, handleClick} = this.props
         return (
             <div>
-            <input
-              placeholder={"Search for Hairdressers, Barbers or Hair Care Shops by location..."}
-              onChange={this.props.handleChange}
-              value={this.props.search}
-            />
-            <button onClick={this.props.handleClick}>Submit</button>
-          </div>
+            <SearchBarShop handleChange={handleChange} search={search.search} handleClick={handleClick}/>
+            <Shop foundShops={search.searchResults}/>
+            </div>
         )
     }
 }

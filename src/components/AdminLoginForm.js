@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import API from "../API"
 
-export default class LoginForm extends Component {
+export default class AdminLoginForm extends Component {
 
     state = {
         username: "",
@@ -16,8 +16,8 @@ export default class LoginForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        API.login(this.state)
-        .then(data => this.props.login(data))
+        API.adminlogin(this.state)
+        .then(data => this.props.adminlogin(data))
     }
 
     
@@ -29,7 +29,7 @@ export default class LoginForm extends Component {
                 <input name="username" value={this.state.username} onChange={this.handleChange}></input>
                 <label>Password:</label>
                 <input name="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
-                <button>Welcome Back To BHI!!!</button>
+                <button>Welcome Back Admin!!</button>
             </form>
         )
     }

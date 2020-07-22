@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import ShopCard from './ShopCard'
 
-export default class Shop extends Component {
-    render() {
-        return (
-            <div>
-                SHOP
-            </div>
-        )
-    }
+export default function Shop({foundShops}) {
+    const shopCard = foundShops.map(shop => <ShopCard key={shop.id} shop={shop} /> )
+    return (
+        <div>
+            {shopCard}
+        </div>
+    )
 }
+

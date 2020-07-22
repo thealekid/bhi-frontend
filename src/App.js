@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Unauthorised from "./components/Unauthorised";
 import Authorised from "./components/Authorised";
 import API from './API';
+import AdminPage from './components/AdminPage';
 
 
 
@@ -9,18 +10,36 @@ class App extends Component {
 
   state = {
     user: {},
-    isLoading: true
+    isLoading: true,
+    type: null
   }
 
   login = (data) => {
     this.setState({
-      user: data.user, 
+      user: data.user, type: "user",
       isLoading: false
     })
     localStorage.token = data.token
   }
 
   logout = () => {
+    // debugger
+    this.setState({
+      user: {}
+    })
+    localStorage.removeItem("token")
+  }
+
+  adminlogin = (data) => {
+    // debugger
+    this.setState({
+      user: data.admin, type: "admin",
+      isLoading: false
+    })
+    localStorage.token = data.token
+  }
+
+  adminlogout = () => {
     this.setState({
       user: {}
     })
@@ -30,8 +49,13 @@ class App extends Component {
   componentDidMount(){
     if (localStorage.token){
       API.validate()
-      .then(data => {
-        this.login(data)
+      .then(data => { 
+        if (data.user){
+          this.login(data)
+        }
+        else if (data.admin){
+          this.adminlogin(data)
+        }
       })
     }
     else {
@@ -47,7 +71,7 @@ class App extends Component {
     }
     return (
       <Fragment>
-        {this.state.user.id ? <Authorised logout={this.logout}/> : <Unauthorised login={this.login}/>}
+        {this.state.user.id ? this.state.type === "user" ? <Authorised logout={this.logout}/> : <AdminPage/>: <Unauthorised login={this.login} adminlogin={this.adminlogin}/>}
       </Fragment>
     )
 

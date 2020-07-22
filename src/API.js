@@ -4,6 +4,12 @@ const SIGNUPURL = BASEURL + "signup"
 const VALIDATEURL = BASEURL + "validate"
 const SHOPSEARCHURL = BASEURL + "shopsearch"
 
+const ADMINLOGINURL = BASEURL + "adminlogin"
+const ADMINSIGNUPURL = BASEURL + "adminsignup"
+const ADMINVALIDATEURL = BASEURL + "adminvalidate"
+const ADMINAPPROVEDUSERSURL = BASEURL + "unapproved"
+const ADMINCONFIRMATIONURL = BASEURL + "approved"
+
 const get = (url) => {
     const configObj = {
         headers: {
@@ -17,6 +23,18 @@ const get = (url) => {
 const post = (url, body) => {
     const configObj = {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(body)
+    } 
+    return fetch (url, configObj)
+}
+
+const patch = (url, body) => {
+    const configObj = {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
@@ -52,5 +70,22 @@ const login = (body) =>
     post(LOGINURL, body)
     .then(response => response.json())
 
+// ADMIN
+const adminapproved = () => get(ADMINAPPROVEDUSERSURL).then(response => response.json())
+const adminvalidate = () => get(ADMINVALIDATEURL).then(response => response.json())
 
-export default {signup, login, validate, searchShops}
+const adminsignup = (body) => 
+        post(ADMINSIGNUPURL, body)
+        .then(response => response.json())
+    
+    
+const adminlogin = (body) => 
+        post(ADMINLOGINURL, body)
+        .then(response => response.json())
+
+const adminconfirmed = (body) => 
+        patch(ADMINCONFIRMATIONURL, body)
+        .then(response => response.json())
+
+
+export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed}

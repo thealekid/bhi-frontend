@@ -38,9 +38,9 @@ export default class Signup extends Component {
                 <label>Email Address:</label>
                 <input name="email_address" value={this.state.email_name} onChange={this.handleChange}></input>
                 <label>Password:</label>
-                <input name="password" value={this.state.password} onChange={this.handleChange}></input>
+                <input name="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
                 <label>Confirm Password:</label>
-                <input name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange}></input>
+                <input name="password_confirmation" type="password" value={this.state.password_confirmation} onChange={this.handleChange}></input>
                 <button>Sign Up To BHI!!</button>
             </form>
         )
