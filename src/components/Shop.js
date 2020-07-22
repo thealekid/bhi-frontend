@@ -1,12 +1,14 @@
 import React from 'react'
-import ShopCard from './ShopCard'
+import {Link} from 'react-router-dom'
+import ShopCardInfo from './ShopCardInfo'
 
-export default function Shop({foundShops}) {
-    const shopCard = foundShops.map(shop => <ShopCard key={shop.id} shop={shop} /> )
+export default function Shop({shop}) {
     return (
-        <div>
-            {shopCard}
-        </div>
+        <Link to={`/shop/${shop.id}`}>
+            <ShopCardInfo labelInput="Name:" pInput={shop.name}/>
+            <ShopCardInfo labelInput="County:" pInput={shop.county}/>
+            <ShopCardInfo labelInput="Postcode:" pInput={shop.postcode}/>
+            <ShopCardInfo labelInput="Service:" pInput={shop.service}/>
+        </Link>
     )
 }
-

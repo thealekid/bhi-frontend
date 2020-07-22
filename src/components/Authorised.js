@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import NavBar from './NavBar'
 import HomePage from './HomePage'
 import ProductList from './ProductList'
-import ShopList from './ShopList'
 import SearchShop from './SearchShop'
 import API from '../API'
+import ShopCard from './ShopCard'
 
-export default class Authorised extends Component {
+class Authorised extends Component {
 
     state = {
         search: "",
@@ -32,11 +32,13 @@ export default class Authorised extends Component {
                 <Switch>
                 <Route exact path={"/"} render={() => <HomePage/>}/>
                 <Route exact path={"/hairproducts"} render={() => <ProductList/>}/>
-                <Route exact path={"/shops"} render={() => <ShopList/>}/>
                 <Route exact path={"/searchshops"} render={() => <SearchShop handleChange={this.handleChange} search={this.state} handleClick={this.handleClick}/>} />
+                <Route exact path={"/shop/:id"} render={matchProps => <ShopCard shopId={matchProps.match.params.id}/>}/>
                 <Redirect to="/" />
                 </Switch>
             </div>
         )
     }
 }
+
+export default withRouter (Authorised)

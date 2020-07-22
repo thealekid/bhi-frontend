@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SearchBarShop from './SearchBarShop'
-import Shop from './Shop'
+import SearchBarShop from './SearchBarShop'             
+import ShopList from './ShopList'
 
 export default class SearchShop extends Component {
 
@@ -9,7 +9,7 @@ export default class SearchShop extends Component {
         return (
             <div>
             <SearchBarShop handleChange={handleChange} search={search.search} handleClick={handleClick}/>
-            <Shop foundShops={search.searchResults}/>
+            <ShopList foundShops={search.searchResults}/>
             </div>
         )
     }

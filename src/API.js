@@ -3,6 +3,8 @@ const LOGINURL = BASEURL + "login"
 const SIGNUPURL = BASEURL + "signup"
 const VALIDATEURL = BASEURL + "validate"
 const SHOPSEARCHURL = BASEURL + "shopsearch"
+const SHOPURL = BASEURL + "shops"
+const NEWSHOPCOMMENTURL = BASEURL + "shop_comments"
 
 const ADMINLOGINURL = BASEURL + "adminlogin"
 const ADMINSIGNUPURL = BASEURL + "adminsignup"
@@ -70,6 +72,15 @@ const login = (body) =>
     post(LOGINURL, body)
     .then(response => response.json())
 
+const getShop = (id) =>
+    get(`${SHOPURL}/${id}`)
+    .then(response => response.json())
+
+const postComment = (body) =>
+    authPost(NEWSHOPCOMMENTURL, body)
+    .then(response => response.json())
+    
+
 // ADMIN
 const adminapproved = () => get(ADMINAPPROVEDUSERSURL).then(response => response.json())
 const adminvalidate = () => get(ADMINVALIDATEURL).then(response => response.json())
@@ -88,4 +99,4 @@ const adminconfirmed = (body) =>
         .then(response => response.json())
 
 
-export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed}
+export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed, getShop, postComment}

@@ -26,7 +26,7 @@ export default class AdminLoginForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Username:</label>
-                <input name="username" value={this.state.username} onChange={this.handleChange}></input>
+                <input name="username" type="password" value={this.state.username} onChange={this.handleChange}></input>
                 <label>Password:</label>
                 <input name="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
                 <button>Welcome Back Admin!!</button>

@@ -28,6 +28,7 @@ export default class AdminPage extends Component {
             <div>
                 ADMIN PAGE
                 {usersAwaitingApproval}
+                <button onClick={this.props.logout}>Log Out</button>
             </div>
         )
     }

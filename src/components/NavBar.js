@@ -7,7 +7,6 @@ export default class NavBar extends Component {
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/hairproducts">Hair Products</Link>
-                <Link to="/shops">Shops</Link>
                 <Link to="/searchshops">Search Shops</Link>
                 <button onClick={this.props.logout}>Log out</button>
             </nav>
