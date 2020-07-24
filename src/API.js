@@ -67,7 +67,6 @@ const signup = (body) =>
     post(SIGNUPURL, body)
     .then(response => response.json())
 
-
 const login = (body) => 
     post(LOGINURL, body)
     .then(response => response.json())
@@ -78,6 +77,10 @@ const getShop = (id) =>
 
 const postComment = (body) =>
     authPost(NEWSHOPCOMMENTURL, body)
+    .then(response => response.json())
+
+const addNewShop = (body) =>
+    authPost(SHOPURL, body)
     .then(response => response.json())
     
 
@@ -99,4 +102,4 @@ const adminconfirmed = (body) =>
         .then(response => response.json())
 
 
-export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed, getShop, postComment}
+export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed, getShop, postComment, addNewShop}

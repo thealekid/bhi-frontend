@@ -9,7 +9,8 @@ export default class Signup extends Component {
         username: "",
         email_address: "",
         password: "",
-        password_confirmation: ""
+        password_confirmation: "",
+        errors: ""
     }
 
     handleChange = ({target: {name, value}}) => {
@@ -21,7 +22,9 @@ export default class Signup extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         API.signup(this.state)
-        .then(data => this.props.login(data))
+        .then(data => {debugger; data.error ? this.setState({
+            errors: data.error
+        }): this.props.login(data)})
     }
 
 
@@ -42,6 +45,13 @@ export default class Signup extends Component {
                 <label>Confirm Password:</label>
                 <input name="password_confirmation" type="password" value={this.state.password_confirmation} onChange={this.handleChange}></input>
                 <button>Sign Up To BHI!!</button>
+                <div className="Errors">
+                    {this.state.errors.length > 0
+                 ? this.state.errors.map((error, index) => (
+                  <p key={index}>{error}</p>
+                ))
+              : null}
+                </div>
             </form>
         )
     }
