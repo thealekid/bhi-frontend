@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import NavBar from './NavBar'
 import HomePage from './HomePage'
-import ProductList from './ProductList'
+import ProductList from '../later/ProductList'
 import SearchShop from './SearchShop'
 import API from '../API'
 import ShopCard from './ShopCard'
+import AddNewShopForm from './AddNewShopForm'
 
 class Authorised extends Component {
 
@@ -30,6 +31,7 @@ class Authorised extends Component {
             <div>
                 <NavBar history={this.props.history} logout={this.props.logout}/>
                 <Switch>
+                <Route exact path={"/addashop"} render={() => <AddNewShopForm/>}/>
                 <Route exact path={"/"} render={() => <HomePage/>}/>
                 <Route exact path={"/hairproducts"} render={() => <ProductList/>}/>
                 <Route exact path={"/searchshops"} render={() => <SearchShop handleChange={this.handleChange} search={this.state} handleClick={this.handleClick}/>} />
