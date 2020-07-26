@@ -22,7 +22,7 @@ export default class Signup extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         API.signup(this.state)
-        .then(data => {debugger; data.error ? this.setState({
+        .then(data => {data.error ? this.setState({
             errors: data.error
         }): this.props.login(data)})
     }

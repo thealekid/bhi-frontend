@@ -7,6 +7,7 @@ import SearchShop from './SearchShop'
 import API from '../API'
 import ShopCard from './ShopCard'
 import AddNewShopForm from './AddNewShopForm'
+import ThanksForSubmit from './ThanksForSubmit'
 
 class Authorised extends Component {
 
@@ -31,11 +32,12 @@ class Authorised extends Component {
             <div>
                 <NavBar history={this.props.history} logout={this.props.logout}/>
                 <Switch>
-                <Route exact path={"/addashop"} render={() => <AddNewShopForm/>}/>
+                <Route exact path={"/addashop"} render={(routerProps) => <AddNewShopForm {...routerProps}/>}/>
                 <Route exact path={"/"} render={() => <HomePage/>}/>
                 <Route exact path={"/hairproducts"} render={() => <ProductList/>}/>
                 <Route exact path={"/searchshops"} render={() => <SearchShop handleChange={this.handleChange} search={this.state} handleClick={this.handleClick}/>} />
                 <Route exact path={"/shop/:id"} render={matchProps => <ShopCard shopId={matchProps.match.params.id}/>}/>
+                <Route exact path={"/received"} render={() => <ThanksForSubmit />}/>
                 <Redirect to="/" />
                 </Switch>
             </div>

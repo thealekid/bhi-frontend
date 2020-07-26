@@ -1,33 +1,39 @@
 import React, { Component } from 'react'
 import API from '../API'
-import UserCard from './UserCard'
+import AdminShopApprovalCard from './AdminShopApprovalCard'
 
 export default class AdminPage extends Component {
 
     state = {
-        users: []
+        shops: []
     }
 
     componentDidMount(){
         API.adminapproved()
-        .then(users => this.setState({
-            users
-        }))
+        .then(shops => {console.log(shops)
+        this.setState({
+            shops
+        })})
     }
 
-    approvedUser = (user) => {
-        API.adminconfirmed(user)
-        .then(data => data.approved && this.setState({users: this.state.users.filter((filteredUser) => filteredUser.id === user.id)}))
+    approvedShop = (shop) => {
+        API.adminconfirmed(shop)
+        .then(data => data.approved && this.setState({shops: this.state.shops.filter((filteredshop) => filteredshop.id !== shop.id)}))
+    }
+
+    declineShop = (shop) => {
+        API.adminDestroy(shop)
+        .then(data => this.setState({shops: this.state.shops.filter((filteredshop) => filteredshop.id !== shop.id)}))
     }
 
 
 
     render() {
-        let usersAwaitingApproval = this.state.users.map(user => <UserCard key={user.id} user={user} approved={this.approvedUser}/>)
+        let shopsAwaitingApproval = this.state.shops.map(shop => <AdminShopApprovalCard key={shop.id} shop={shop} approved={this.approvedShop} decline={this.declineShop}/>)
         return (
             <div>
                 ADMIN PAGE
-                {usersAwaitingApproval}
+                {shopsAwaitingApproval}
                 <button onClick={this.props.logout}>Log Out</button>
             </div>
         )

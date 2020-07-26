@@ -9,8 +9,9 @@ const NEWSHOPCOMMENTURL = BASEURL + "shop_comments"
 const ADMINLOGINURL = BASEURL + "adminlogin"
 const ADMINSIGNUPURL = BASEURL + "adminsignup"
 const ADMINVALIDATEURL = BASEURL + "adminvalidate"
-const ADMINAPPROVEDUSERSURL = BASEURL + "unapproved"
+const ADMINAPPROVEDSHOPSURL = BASEURL + "unapproved"
 const ADMINCONFIRMATIONURL = BASEURL + "approved"
+const ADMINDECLINEURL = BASEURL + "decline"
 
 const get = (url) => {
     const configObj = {
@@ -18,8 +19,7 @@ const get = (url) => {
             "Authorisation": localStorage.token
         }
     }
-    return fetch(url, configObj)
-    
+    return fetch(url, configObj)  
 }
 
 const post = (url, body) => {
@@ -59,6 +59,19 @@ const authPost = (url, body) => {
     return fetch (url, configObj)
 }
 
+const destroy = (url, body) => {
+    const configObj = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorisation": localStorage.token
+        },
+        body: JSON.stringify(body)
+    } 
+    return fetch (url, configObj)
+}
+
 const searchShops = (body) => authPost (SHOPSEARCHURL, body).then(response => response.json())
 
 const validate = () => get(VALIDATEURL).then(response => response.json())
@@ -85,7 +98,7 @@ const addNewShop = (body) =>
     
 
 // ADMIN
-const adminapproved = () => get(ADMINAPPROVEDUSERSURL).then(response => response.json())
+const adminapproved = () => get(ADMINAPPROVEDSHOPSURL).then(response => response.json())
 const adminvalidate = () => get(ADMINVALIDATEURL).then(response => response.json())
 
 const adminsignup = (body) => 
@@ -102,4 +115,8 @@ const adminconfirmed = (body) =>
         .then(response => response.json())
 
 
-export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed, getShop, postComment, addNewShop}
+const adminDestroy = (body) =>
+        destroy(ADMINDECLINEURL, body)
+        .then(response => response.json())
+
+export default {signup, login, validate, searchShops, adminvalidate, adminsignup, adminlogin, adminapproved, adminconfirmed, getShop, postComment, addNewShop, adminDestroy}

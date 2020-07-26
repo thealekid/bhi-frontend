@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import API from '../API'
-// import API from "../API"
-
 
 export default class AddNewShopForm extends Component {
 
     state = {
-        image_url: "",
+        image_url: "https://res.cloudinary.com/dy9ugu5ex/image/upload/v1595795786/I%20Love%20Chuk/default-store-350x350_gtjp8z.jpg",
         name: "",
         phone_number: "",
         opening_hours: "",
@@ -15,7 +13,10 @@ export default class AddNewShopForm extends Component {
         county: "",
         country: "",
         postcode: "",
-        service: ""
+        service: "",
+        disabled: false,
+        errors: "",
+        loading: false
     }
 
 
@@ -27,14 +28,44 @@ export default class AddNewShopForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.setState({
+            disabled: true
+        })
         API.addNewShop(this.state)
-        .then( () => {})
+        .then(data => {data.error ? this.setState({
+            errors: data.error,
+            disabled: false
+        }): this.props.history.push("/received")})
     }
+
+    fileChange = async (e) => {
+        const files = e.target.files;
+        const data = new FormData();
+        data.append("file", files[0]);
+        data.append("upload_preset", "chukchuk");
+        this.setState({ loading: true });
+        const res = await fetch(
+          "https://api.cloudinary.com/v1_1/dy9ugu5ex/image/upload",
+          {
+            method: "POST",
+            body: data,
+          }
+        );
+        const file = await res.json();
+        this.setState({ image_url: file.secure_url, loading: false });
+      };
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type="file" name="image" placeholder="upload image..." value={this.state.image_url} onChange={this.handleChange}/>
+            <form onSubmit = {(event) => {!this.state.loading ? this.handleSubmit(event) : event.preventDefault()}}>
+
+                <div className="PostPicPic">
+                <img src={this.state.image_url} alt="new-shop"/>
+                </div>    
+                <input type="file" name="files"
+                        onChange={(e) => this.fileChange(e)}
+                        accept=".png, .jpg, .jpeg"
+                />
                 <input type="text" name="name" placeholder="Add name..." value={this.state.name} onChange={this.handleChange} />
                 <input type="text" name="phone_number" placeholder="Add phone number..." value={this.state.phone_number} onChange={this.handleChange}/>
                 <input type="text" name="opening_hours" placeholder="Add opening hours..." value={this.state.opening_hours} onChange={this.handleChange} />
@@ -66,7 +97,14 @@ export default class AddNewShopForm extends Component {
                         Afro Hair Care Shop
                     </label>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" disabled={this.state.disabled}>Submit</button>
+                <div className="Errors">
+                    {this.state.errors.length > 0
+                 ? this.state.errors.map((error, index) => (
+                  <p key={index}>{error}</p>
+                ))
+              : null}
+              </div>
             </form>
         )
     }

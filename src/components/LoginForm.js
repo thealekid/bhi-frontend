@@ -18,8 +18,8 @@ export default class LoginForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         API.login(this.state)
-        .then(data => {data.error ? this.setState({
-            errors: data.error
+        .then(data => {data.message ? this.setState({
+            errors: data.message
         }): this.props.login(data)})
         
     }
@@ -33,7 +33,9 @@ export default class LoginForm extends Component {
                 <input name="username" value={this.state.username} onChange={this.handleChange}></input>
                 <label>Password:</label>
                 <input name="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
-                <button>Welcome Back To BHI!!!</button>
+                <button>Welcome Back To BHI!!!</button>{
+                    this.state.errors && <p>{this.state.errors}</p>
+                }
             </form>
         )
     }
