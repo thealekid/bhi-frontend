@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import Unauthorised from "./components/Unauthorised";
+import Unauthorised from "./components/Unauthorised/Unauthorised";
 import Authorised from "./components/Authorised";
 import API from './API';
-import AdminPage from './components/AdminPage';
-
+import AdminPage from './components/AdminPage/AdminPage';
 
 
 class App extends Component {

@@ -18,6 +18,9 @@ export default class ShopComment extends Component {
         API.postComment({
             description: this.state.comment, shop_id: this.props.shopId
         }).then(this.props.addComment)
+        this.setState({
+            comment: ""
+        })
     }
 
     render() {
@@ -28,7 +31,7 @@ export default class ShopComment extends Component {
             <div>
                 <label>Comments</label>
                 <textarea name="comment" value={this.state.comment} onChange={this.handleChange}/>
-                <button onClick={this.handleSubmit}>Submit Comment</button>
+                <button onClick={this.handleSubmit} >Submit Comment</button>
             </div>
         )
     }

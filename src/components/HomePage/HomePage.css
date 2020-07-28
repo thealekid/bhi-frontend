@@ -1,0 +1,32 @@
+.home-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+}
+
+.home-page-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 46vw;
+    background-color: rgb(199, 176, 133);
+    height: 84vh;
+    padding: 2em;
+}
+
+.home-page-image{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page-image img{
+    width: 80%;
+    /* box-shadow: 5px 10px #888888; */
+    box-shadow: -10px 10px 8px 10px #888888;
+    
+}

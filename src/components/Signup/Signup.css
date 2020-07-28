@@ -1,0 +1,57 @@
+.Signup-form {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.motto{
+    text-align: right;
+    margin-right: 2em;
+}
+
+.Signup-form .Signup-image{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Signup-form .Signup-image img{
+    width: 80%;
+    min-width: 200px;
+    box-shadow: -10px 10px 8px 10px #888888;
+
+}
+
+.Signup-form form{
+    width: 50vw;
+    padding: 0 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -10px 10px 8px 10px #888888; */
+}
+
+.Signup-form form label{
+    padding: 0.5em;
+}
+
+.Signup-form form input{
+    margin: 0.5em 0;
+}
+
+.Signup-form .btn button{
+    margin: 0.5em;
+}
+
+@media only screen and (min-width: 600px) {
+    .Signup-form {
+      flex-direction: row;
+      
+     }
+   }

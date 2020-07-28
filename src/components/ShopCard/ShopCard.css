@@ -1,0 +1,61 @@
+.shop-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.image-detail {
+    width: 50vw;
+
+}
+
+.image-detail img {
+    width: 80%;
+    box-shadow: -10px 10px 8px 10px #888888;
+    margin-left: 10%;
+    margin-top: -5em;
+}
+
+.shop-details {
+    align-items: center;
+    text-align: center;
+    background-color: thistle;
+    width: 45vw;
+    display: flex;
+    margin-right: 2.5vw;
+    flex-direction: column;
+}
+
+.shop-details .info-details label{
+   text-decoration: underline;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.shop-comment-card {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-line {
+    padding: 0.5em;
+    width: 80vw;
+
+}
+
+.date-time {
+    font-size: 0.6em;
+}

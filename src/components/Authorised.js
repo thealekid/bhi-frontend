@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
-import NavBar from './NavBar'
-import HomePage from './HomePage'
-import ProductList from '../later/ProductList'
-import SearchShop from './SearchShop'
+import NavBar from './NavBar/NavBar'
+import HomePage from './HomePage/HomePage'
+import SearchShop from './Search/SearchShop'
 import API from '../API'
-import ShopCard from './ShopCard'
-import AddNewShopForm from './AddNewShopForm'
-import ThanksForSubmit from './ThanksForSubmit'
+import ShopCard from './ShopCard/ShopCard'
+import AddNewShopForm from './AddNewShop/AddNewShopForm'
+import ThanksForSubmit from './ThanksForSubmit/ThanksForSubmit'
 
 class Authorised extends Component {
 
@@ -34,7 +33,7 @@ class Authorised extends Component {
                 <Switch>
                 <Route exact path={"/addashop"} render={(routerProps) => <AddNewShopForm {...routerProps}/>}/>
                 <Route exact path={"/"} render={() => <HomePage/>}/>
-                <Route exact path={"/hairproducts"} render={() => <ProductList/>}/>
+                {/* <Route exact path={"/hairproducts"} render={() => <ProductList/>}/> */}
                 <Route exact path={"/searchshops"} render={() => <SearchShop handleChange={this.handleChange} search={this.state} handleClick={this.handleClick}/>} />
                 <Route exact path={"/shop/:id"} render={matchProps => <ShopCard shopId={matchProps.match.params.id}/>}/>
                 <Route exact path={"/received"} render={() => <ThanksForSubmit />}/>

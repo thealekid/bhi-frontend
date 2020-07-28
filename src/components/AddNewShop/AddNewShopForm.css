@@ -1,0 +1,58 @@
+.Add-shop-form {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5em;
+}
+
+
+.motto{
+    text-align: right;
+    margin-right: 2em;
+}
+
+.Add-shop-form .Add-shop-image{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Add-shop-form .Add-shop-image img{
+    width: 80%;
+    min-width: 200px;
+    box-shadow: -10px 10px 8px 10px #888888;
+
+}
+
+.Add-shop-form form{
+    width: 50vw;
+    padding: 0 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -10px 10px 8px 10px #888888; */
+}
+
+.Add-shop-form form label{
+    padding: 0.5em;
+}
+
+.Add-shop-form form input{
+    margin: 0.5em 0;
+}
+
+.Add-shop-form button{
+    margin: 1em 0.5em;
+}
+
+@media only screen and (min-width: 600px) {
+    .Add-shop-form {
+      flex-direction: row;
+      
+     }
+   }
