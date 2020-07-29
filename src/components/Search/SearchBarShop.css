@@ -1,19 +1,57 @@
 .Search-shop {
-    margin-top: 5em;
+    /* margin-top: 5em; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(211, 131, 66);
+    min-height: 100vh;
+
 }
 
 .search-bar-shop {
     display: flex;
     justify-content: center;
+    margin-top: 5em;
 }
 
 .search-bar-shop input{
     margin: 0 0.5em;
-    /* display: flex; */
+    width: 990px;
+    height: 45px;
+    display: block;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-family: "Avenir";
+    overflow: hidden;
 }
+
+.search-button{
+    display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: "Avenir";
+    font-size: 0.625rem;
+    letter-spacing: 0.3em;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    padding: 18px 80px 20px;
+    transition: all 0.7s ease-out;
+    background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    /* margin: 0.625rem; */
+    border: none;
+    border: 1px solid rgba(223,190,106,0.3);
+}
+
+.search-button:hover{
+    color: #fff;
+    border: 1px solid rgba(223,190,106,0);
+    color: black;
+    background-position: 99% 50%;
+  }
 
 .shop {
     height: 30vh;
@@ -24,10 +62,11 @@
     flex-direction: column;
     margin: 2em 1em;
     box-shadow: -7px 7px 12px 2px #cfcccc;
+    background-color: black;
+    font-family: "Avenir";
 }
 
 .shoplist {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
 }

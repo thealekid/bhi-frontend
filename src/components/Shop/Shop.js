@@ -8,8 +8,8 @@ export default function Shop({shop}) {
             <div className="shop">
             <b><ShopCardInfo pInput={shop.name}/></b>
             <br/>
-            <ShopCardInfo labelInput="Postcode:" pInput={shop.postcode}/>
-            <ShopCardInfo labelInput="Service:" pInput={shop.service}/>
+            <ShopCardInfo pInput={shop.postcode}/>
+            <ShopCardInfo pInput={shop.service}/>
             </div>
         </Link>
        

@@ -28,10 +28,9 @@ export default class ShopComment extends Component {
         
 
         return (
-            <div>
-                <label>Comments</label>
-                <textarea name="comment" value={this.state.comment} onChange={this.handleChange}/>
-                <button onClick={this.handleSubmit} >Submit Comment</button>
+            <div className="comment-box">
+                <textarea value={this.state.comment} onChange={this.handleChange} placeholder="Please let us know of your experience..."/>
+                <button onClick={this.handleSubmit} className="submit-comment" type="submit">Submit Comment</button>
             </div>
         )
     }

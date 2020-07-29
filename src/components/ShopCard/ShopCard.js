@@ -71,7 +71,7 @@ export default class ShopCard extends Component {
           </div>
         </div>
         <div className="reviews">
-            <h2>Reviews</h2>
+            <h2>Comments</h2>
           <ShopComment
             shopId={this.props.shopId}
             addComment={this.addComment}

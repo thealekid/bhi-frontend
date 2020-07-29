@@ -30,7 +30,7 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-        <div><p className="motto">UK's online hair community</p>
+     
       <div className="Login-form">
           <div className="Login-image">
               <img src={Login} alt="Login" />
@@ -52,19 +52,19 @@ export default class LoginForm extends Component {
             onChange={this.handleChange}
           ></input>
           <br/>
-          <button type="submit">Welcome Back To BHI!!!</button>
+          <button type="submit" className="login-button">Log In</button>
           <br />
           {this.state.errors && <p>{this.state.errors}</p>}
           <br />
           <div className="btn">
-            <button
+            <button className="home-button"
               onClick={() => {
                 this.props.history.push("/");
               }}
             >
               Home
             </button>
-            <button
+            <button className="signup-button"
               onClick={() => {
                 this.props.history.push("/signup");
               }}
@@ -73,8 +73,8 @@ export default class LoginForm extends Component {
             </button>
           </div>
         </form>
-      </div>
-      </div>
+    </div>
+   
     );
   }
 }

@@ -32,9 +32,11 @@ export default class AdminPage extends Component {
         let shopsAwaitingApproval = this.state.shops.map(shop => <AdminShopApprovalCard key={shop.id} shop={shop} approved={this.approvedShop} decline={this.declineShop}/>)
         return (
             <div className="Admin-page">
+                <div className="Admin-nav">
                 ADMIN PAGE
+                <button className="Admin-logout" onClick={this.props.logout}>Log Out</button>
+                </div>
                 {shopsAwaitingApproval}
-                <button onClick={this.props.logout}>Log Out</button>
             </div>
         )
     }

@@ -7,12 +7,14 @@ export default function SearchBarShop({handleChange, search, handleClick}) {
         <div className="search-bar-shop">
         <Fragment>
             <input
-              placeholder={"Search for Hairdressers, Barbers or Hair Care Shops by location..."}
+              placeholder={"Search for Hairdressing Salons, Barbershops or Afro Hair Care Shops by postcode..."}
               onChange={handleChange}
               value={search}
             />
-            <button onClick={handleClick}>Submit</button>
+            <button className="search-button" onClick={handleClick}>Submit</button>
         </Fragment>
         </div>
+
+        
     )
 }

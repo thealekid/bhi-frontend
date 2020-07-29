@@ -72,10 +72,11 @@ export default class AddNewShopForm extends Component {
               : event.preventDefault();
           }}
         >
-          <h2>Add A New Shop</h2>
+          <h2>Add A New Place</h2>
           <input
             type="file"
             name="files"
+            content="Upload a photo"
             onChange={(e) => this.fileChange(e)}
             accept=".png, .jpg, .jpeg"
           />
