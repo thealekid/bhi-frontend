@@ -5,7 +5,7 @@ export default function ThanksForSubmit() {
     return (
         <div className="thanksdiv">
         <div className="thanks">
-            <p>Thanks for Submitting a Place! <br/> Our Moderator will approve this shortly!</p>
+            <p><b>Thanks for Submitting a Place!</b><br/> <b>Our Moderator will approve this shortly!</b></p>
         </div>
         </div>
     )

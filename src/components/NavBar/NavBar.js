@@ -11,7 +11,7 @@ export default class NavBar extends Component {
         </div>
         <div className="add">
           <Link to="/addashop">Add A New Place</Link>
-          <Link to="/searchshops">Search Shops</Link>
+          <Link to="/searchshops">Search Places</Link>
         </div>
         <div>
           <button onClick={this.props.logout}>Log out</button>

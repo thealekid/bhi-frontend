@@ -2,7 +2,8 @@
     background-color:  rgba(146,111,52,0.8);
     font-family: "Avenir";
     text-align: center;
-
+    font-style: italic;
+    overflow: hidden;
 }
 
 .Admin-nav {
@@ -27,7 +28,7 @@
 
 .Admin-image {
     width: 50vw;
-    background: black;
+    background: rgb(206, 94, 94);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -43,7 +44,7 @@
     height: 100vh;
     align-items: center;
     text-align: center;
-    background-color:  rgb(211, 131, 66);
+    background-color:  rgb(206, 132, 193);
     width: 50vw;
     display: flex;
     flex-direction: column;

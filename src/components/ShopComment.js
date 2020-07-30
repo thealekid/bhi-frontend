@@ -9,6 +9,7 @@ export default class ShopComment extends Component {
     }
 
     handleChange = ({target: {name, value}}) => {
+        console.log(name)
         this.setState({
             [name]: value
         })
@@ -29,7 +30,7 @@ export default class ShopComment extends Component {
 
         return (
             <div className="comment-box">
-                <textarea value={this.state.comment} onChange={this.handleChange} placeholder="Please let us know of your experience..."/>
+                <textarea name="comment" value={this.state.comment} onChange={this.handleChange} placeholder="Please let us know of your experience..."/>
                 <button onClick={this.handleSubmit} className="submit-comment" type="submit">Submit Comment</button>
             </div>
         )

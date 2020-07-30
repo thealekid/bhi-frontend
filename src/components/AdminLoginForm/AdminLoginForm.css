@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(206, 94, 94);
     height: 100vh;
 }
 
@@ -31,7 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(211, 131, 66);
+    background-color: rgb(206, 132, 193);
 }
 
 .Admin-Login-Form form label{
@@ -102,6 +102,5 @@
 @media only screen and (min-width: 600px) {
     .Admin-Login-Form {
       flex-direction: row;
-      
      }
    }

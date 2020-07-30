@@ -77,7 +77,7 @@ export default class Signup extends Component {
             value={this.state.password_confirmation}
             onChange={this.handleChange}
           ></input>
-          <button>Sign Up To BHI!!</button>
+          <button className="submit-signup-button">Submit</button>
           <div className="Errors">
             {this.state.errors.length > 0
               ? this.state.errors.map((error, index) => (

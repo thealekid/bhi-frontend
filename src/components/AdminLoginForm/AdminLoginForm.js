@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../API";
-import AdditionalPhoto2 from "../../assets/AdditionalPhoto2.png";
+import AdminLoginFormImage from "../../assets/AdminLoginFormImage.png";
 import "./AdminLoginForm.css"
 
 export default class AdminLoginForm extends Component {
@@ -24,7 +24,7 @@ export default class AdminLoginForm extends Component {
     return (
       <div className="Admin-Login-Form">
         <div className="Admin-Login-image">
-          <img src={AdditionalPhoto2} alt="Login" />
+          <img src={AdminLoginFormImage} alt="Login" />
         </div>
         <form onSubmit={this.handleSubmit}>
           <label>Username:</label>
