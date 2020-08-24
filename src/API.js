@@ -1,4 +1,4 @@
-const BASEURL = "http://localhost:3000/"
+const BASEURL = "https://blackhairindex.herokuapp.com/"
 const LOGINURL = BASEURL + "login"
 const SIGNUPURL = BASEURL + "signup"
 const VALIDATEURL = BASEURL + "validate"
