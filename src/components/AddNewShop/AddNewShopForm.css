@@ -1,0 +1,79 @@
+.Add-shop-form {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5em;
+}
+
+.Add-shop-form .Add-shop-image{
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.Add-shop-form .Add-shop-image img{
+    width: 70%;
+    min-width: 200px;
+}
+
+.Add-shop-form form{
+    height: 100vh;
+    width: 46vw;
+    padding: 0 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Avenir";
+    background-color: rgb(211, 131, 66);
+}
+
+.Add-shop-form form label{
+    padding: 0.5em;
+}
+
+.Add-shop-form form input{
+    margin: 0.5em 0;
+    font-family: "Avenir";
+}
+
+.Add-shop-form button{
+    display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: "Avenir";
+    font-size: 0.625rem;
+    letter-spacing: 0.3em;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    padding: 18px 80px 20px;
+    transition: all 0.7s ease-out;
+    background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    margin: 0.625rem;
+    border: none;
+    border: 1px solid rgba(223,190,106,0.3);
+}
+
+.Add-shop-form button:hover {
+    color: #fff;
+    border: 1px solid rgba(223,190,106,0);
+    color: black;
+    background-position: 99% 50%;
+  }
+
+@media only screen and (min-width: 600px) {
+    .Add-shop-form {
+      flex-direction: row;
+      
+     }
+   }

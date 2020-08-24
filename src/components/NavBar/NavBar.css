@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 98vw;
+    padding: 1em;
+    align-items: flex-end;
+    background-color:  rgb(238, 210, 187);
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    font-family: "Avenir";
+    height: 3vh;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black
+}
+
+.navbar a:hover{
+    color: hotpink;
+}
+
+.navbar button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Avenir";
+    color: black
+}
+
+.navbar button:hover{
+    color: hotpink;
+}
+
+.add a{
+    margin: 0 0.5em;
+}

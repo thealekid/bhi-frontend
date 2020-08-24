@@ -1,0 +1,143 @@
+.Admin-page {
+    background-color:  rgba(146,111,52,0.8);
+    font-family: "Avenir";
+    text-align: center;
+    font-style: italic;
+    overflow: hidden;
+}
+
+.Admin-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94vw;
+    margin-left: 3vw;
+    padding: 1em 0.5em;
+}
+
+.Admin-shop-approval-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.Admin-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.Admin-image {
+    width: 50vw;
+    background: rgb(206, 94, 94);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Admin-image img {
+    width: 80%;
+    display: flex;
+}
+
+.Admin-shop-details {
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    background-color:  rgb(206, 132, 193);
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    font-family: "Avenir";
+}
+
+.Admin-shop-details .info-details label{
+   text-decoration: underline;
+}
+
+.Admin-btn {
+    display: flex;
+}
+
+.Admin-approve-btn {
+    display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: "Avenir";
+    font-size: 0.625rem;
+    letter-spacing: 0.3em;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    padding: 18px 80px 20px;
+    transition: all 0.7s ease-out;
+    background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    margin: 0.625rem;
+    border: none;
+    border: 1px solid rgba(223,190,106,0.3);
+}
+
+.Admin-approve-btn:hover {
+    color: #fff;
+    border: 1px solid rgba(223,190,106,0);
+    color: black;
+    background-position: 99% 50%;
+}
+
+.Admin-decline-btn {
+    display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: "Avenir";
+    font-size: 0.625rem;
+    letter-spacing: 0.3em;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    padding: 18px 80px 20px;
+    transition: all 0.7s ease-out;
+    background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    margin: 0.625rem;
+    border: none;
+    border: 1px solid rgba(223,190,106,0.3);
+}
+
+.Admin-decline-btn:hover {
+    color: #fff;
+    border: 1px solid rgba(223,190,106,0);
+    color: black;
+    background-position: 99% 50%;
+}
+
+.Admin-logout {
+    display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: "Avenir";
+    font-size: 0.625rem;
+    letter-spacing: 0.3em;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    padding: 18px 80px 20px;
+    transition: all 0.7s ease-out;
+    background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    margin: 0.625rem;
+    border: none;
+    border: 1px solid rgba(223,190,106,0.3);
+}
+
+.Admin-logout:hover {
+    border: 1px solid rgba(223,190,106,0);
+    color: black;
+    background-position: 99% 50%;
+}
