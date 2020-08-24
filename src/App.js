@@ -64,6 +64,7 @@ class App extends Component {
       })
     }
     else {
+      API.validate()
       this.setState({
         isLoading: false
       })
